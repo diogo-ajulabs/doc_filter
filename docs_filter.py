@@ -75,7 +75,7 @@ Responda APENAS no seguinte formato JSON:
 class DocumentFilter:
     def __init__(self):
         self.llm = ChatOpenAI(
-            model="gpt-4o-mini",
+            model="gpt-4",
             temperature=0,
         )
 
@@ -373,7 +373,8 @@ class DocumentFilter:
         print(f"✓ Total de linhas carregadas: {len(df)}")
 
         # Limita aos 30 primeiros itens
-        df = df.head(30)
+        df = df.iloc[30:60]
+
         print(f"→ Limitando aos primeiros 30 itens")
 
         # Verifica se existem as colunas necessárias
